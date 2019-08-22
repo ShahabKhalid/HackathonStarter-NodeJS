@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  node_app:
+    build:
+      context: .
+    command: ["npm", "start"]
+    ports:
+      - "80:80"
+
