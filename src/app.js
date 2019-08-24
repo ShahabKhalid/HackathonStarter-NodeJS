@@ -1,23 +1,29 @@
 /*
-    NodeJSBoilerPlate By Shahab Khalid
+    SpecialMenu Backend By Shahab Khalid
+    CopyRight @ Hasa Inc.
 */
 
 
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
+import express from 'express'
+import cors from 'cors'
+import bodyParser from 'body-parser'
+
+import './db/index'
+
 import {
-  CommonRoutes
-} from './routes/';
+    AuthRoutes,
+    RestaurantRoutes
+} from './routes/'
 
-let app = express();
-app.use(cors());
+let app = express()
+app.use(cors())
 
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-CommonRoutes(app);
 
+AuthRoutes(app, '/auth')
+RestaurantRoutes(app, '/restaurant')
 
-export default app;
+export default app

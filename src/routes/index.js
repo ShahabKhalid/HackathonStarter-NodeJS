@@ -2,13 +2,10 @@
   Includes All routes
  */
 
-
-const CommonRoutes = app => {
-  app.get('/', function (req, res) {
-    res.send("Api response")
-  });
-};
+import AuthRoutes from './authRoutes'
+import RestaurantRoutes from "./restaurantsRoutes"
 
 export {
-  CommonRoutes
+    AuthRoutes,
+    RestaurantRoutes
 }
